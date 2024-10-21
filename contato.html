@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>GrowTime</title>
+		<link rel="icon" 
+              type="png" 
+              href="images/estetica.webp" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="css/main.css" />
+		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+		<link rel="manifest" href="manifest.json">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+				<div id="intro">
+					<h1>Grow Time</h1>
+				</div>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Inicio</a></li>
+							<li><a href="agendamento.html">Agendamento</a></li>
+							<li class="active"><a href="contato.html">Contato</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.instagram.com/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+								<span class="date">Melhor Atendimento</span>
+									<h1>fale<br />
+									conosco</h1>
+								</header>
+
+								<section>
+									<form method="post" action="#">
+										<div class="fields">
+											
+											<div class="field">
+												<label for="name">Nome</label>
+												<input type="text" name="name" id="name" />
+											</div>
+											<div class="field">
+												<label for="email">Email</label>
+												<input type="text" name="email" id="email" />
+											</div>
+											<div class="field">
+												<label for="message">Mensagem</label>
+												<textarea name="message" id="message" rows="3"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Enviar Mensagem" /></li>
+										</ul>
+									</form>
+								</section>
+
+
+								<header class="major">
+									<h3>Telefone</h3>
+								    </header>
+
+								    <ul class="actions special">
+									<li><a href="tel:00.0000.0000" >(81) 0000-0000</a></li>
+								    </ul>
+
+								<header class="major">
+									<h3>E-mail</h3>
+								    </header>
+
+									<ul class="actions special">
+										<li><a href="mailto:growtime@grow.time">growtime@grow.time</a></li>
+									</ul>
+
+									<header class="major">
+										<h3>Redes Sociais</h3>
+										<ul class="icons alt">
+											<li><a href="https://twitter.com/" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="https://www.facebook.com/" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+											<li><a href="https://www.instagram.com/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+										
+										</ul>
+									</header>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="js/jquery.min.js"></script>
+			<script src="js/jquery.scrollex.min.js"></script>
+			<script src="js/jquery.scrolly.min.js"></script>
+			<script src="js/browser.min.js"></script>
+			<script src="js/breakpoints.min.js"></script>
+			<script src="js/util.js"></script>
+			<script src="js/main.js"></script>
+
+			<script>
+				let newWorker;
+				if ('serviceWorker' in navigator) {
+				  navigator.serviceWorker.register('/service-worker.js').then(reg => {
+					reg.addEventListener('updatefound', () => {
+					  newWorker = reg.installing;
+					});
+				  });
+				  let refreshing;
+				  navigator.serviceWorker.addEventListener('controllerchange', function () {
+					if (refreshing) return;
+					window.location.reload();
+					refreshing = true;
+				  });
+				}
+			  </script>
+
+	</body>
+</html>
