@@ -14,6 +14,28 @@
 		$main = $('#main'),
 		$navPanelToggle, $navPanel, $navPanelInner;
 
+	// Forms
+
+	function formSubmit(form){
+		$(`${form}`).on('submit', function(e) {
+			e.preventDefault();
+			var objectForm = {};
+	
+			$(`${form} input, ${form} textarea`).each(function() {
+				var fieldName = $(this).attr('name');
+				var fieldValue = $(this).val();
+				if(fieldName === undefined || fieldName === '') return;
+				objectForm[fieldName] = fieldValue;
+			});
+
+			console.log(objectForm);
+
+		});
+	}
+
+	formSubmit('#form-contact');
+	formSubmit('#form-schedule');
+
 	// Breakpoints.
 		breakpoints({
 			default:   ['1681px',   null       ],

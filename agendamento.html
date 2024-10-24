@@ -45,55 +45,57 @@
 
 								<!-- Form -->
 
-									<form method="post" action="#">
+									<form name="form-schedule" id="form-schedule" method="post" action="#">
 										<div class="row gtr-uniform">
 											<div class="col-6 col-12-xsmall">
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Nome" />
+												<input type="text" name="schedule-name" id="schedule-name" value="" placeholder="Nome" required/>
 											</div>
 											<div class="col-6 col-12-xsmall">
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="E-mail" />
+												<input type="email" name="schedule-email" id="schedule-email" value="" placeholder="E-mail" required/>
 											</div>
 											<!-- Break -->
 											<div class="col-12">
-												<select name="demo-category" id="demo-category">
-													<option value="">- Categoria -</option>
-													<option value="1">estetica</option>
-													<option value="1">estetica</option>
+												<select name="schedule-category" id="schedule-category" required>
+													<option value="" disabled selected>- Categoria -</option>
+													<option value="estetica">estetica</option>
+													<option value="estetica">estetica</option>
 												</select>
 												<p><h3>Público Alvo</h3></p>
 											</div>
 											
 											<!-- Break -->
 											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Conservador</label>
+												<input type="radio" id="schedule-priority-low" name="schedule-priority" value="Conservador" checked required>
+												<label for="schedule-priority-low">Conservador</label>
 											</div>
 											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-normal" name="demo-priority">
-												<label for="demo-priority-normal">Moderado</label>
+												<input type="radio" id="schedule-priority-normal" name="schedule-priority" value="Moderado">
+												<label for="schedule-priority-normal">Moderado</label>
 											</div>
 											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">Arrojado</label>
+												<input type="radio" id="schedule-priority-high" name="schedule-priority" value="Arrojado">
+												<label for="schedule-priority-high">Arrojado</label>
 											</div>
 											<!-- Break -->
 											<div class="col-6 col-12-small">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Internacional</label>
+												<input type="checkbox" id="schedule-international" name="schedule-origin" value="Internacional">
+												<label for="schedule-international">Internacional</label>
 											</div>
 											<div class="col-6 col-12-small">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Nacional</label>
+												<input type="checkbox" id="schedule-local" name="schedule-origin" value="Nacional" checked>
+												<label for="schedule-local">Nacional</label>
 											</div>
 											<!-- Break -->
 											<div class="col-12">
-												<textarea name="demo-message" id="demo-message" placeholder="Escreva o que pensar" rows="6"></textarea>
+												<textarea name="schedule-message" id="schedule-message" placeholder="Escreva o que pensar" rows="6" required></textarea>
 											</div>
 											<!-- Break -->
 											<div class="col-12">
 												<ul class="actions">
-													<li><input type="submit" value="Enviar" class="primary" /></li>
-													<li><input type="reset" value="Limpar" /></li>
+													<!-- Enviar -->
+													<li><input type="submit" class="primary" /></li>
+													<!-- Limpar -->
+													<li><input type="reset"/></li>
 												</ul>
 											</div>
 										</div>
