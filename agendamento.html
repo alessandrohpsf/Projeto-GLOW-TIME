@@ -10,6 +10,8 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
 		<link rel="manifest" href="manifest.json">
+		<!-- toast -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 	</head>
 	<body class="is-preload">
 
@@ -55,39 +57,26 @@
 											</div>
 											<!-- Break -->
 											<div class="col-12">
-												<select name="schedule-category" id="schedule-category" required>
-													<option value="" disabled selected>- Categoria -</option>
-													<option value="estetica">estetica</option>
-													<option value="estetica">estetica</option>
+												<input type="text" name="schedule-phone" id="schedule-phone" value="" placeholder="Telefone" required/>
+											</div>
+											<!-- Break -->
+											<div class="col-6 col-12-xsmall">
+												<input type="date" name="schedule-date" id="schedule-date" value="" title="Selecione uma data de agendamento" required/>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<select name="schedule-time" id="schedule-time" required>
+													<option value="" disabled selected>Selecione uma hora</option>
+													<option value="7:00">7:00</option>
+													<option value="8:00">8:00</option>
+													<option value="9:00">9:00</option>
+													<option value="10:00">10:00</option>
+													<option value="11:00">11:00</option>
+													<option value="12:00">12:00</option>
+													<option value="13:00">13:00</option>
+													<option value="14:00">14:00</option>
+													<option value="15:00">15:00</option>
+													<option value="16:00">16:00</option>
 												</select>
-												<p><h3>Público Alvo</h3></p>
-											</div>
-											
-											<!-- Break -->
-											<div class="col-4 col-12-small">
-												<input type="radio" id="schedule-priority-low" name="schedule-priority" value="Conservador" checked required>
-												<label for="schedule-priority-low">Conservador</label>
-											</div>
-											<div class="col-4 col-12-small">
-												<input type="radio" id="schedule-priority-normal" name="schedule-priority" value="Moderado">
-												<label for="schedule-priority-normal">Moderado</label>
-											</div>
-											<div class="col-4 col-12-small">
-												<input type="radio" id="schedule-priority-high" name="schedule-priority" value="Arrojado">
-												<label for="schedule-priority-high">Arrojado</label>
-											</div>
-											<!-- Break -->
-											<div class="col-6 col-12-small">
-												<input type="checkbox" id="schedule-international" name="schedule-origin" value="Internacional">
-												<label for="schedule-international">Internacional</label>
-											</div>
-											<div class="col-6 col-12-small">
-												<input type="checkbox" id="schedule-local" name="schedule-origin" value="Nacional" checked>
-												<label for="schedule-local">Nacional</label>
-											</div>
-											<!-- Break -->
-											<div class="col-12">
-												<textarea name="schedule-message" id="schedule-message" placeholder="Escreva o que pensar" rows="6" required></textarea>
 											</div>
 											<!-- Break -->
 											<div class="col-12">
@@ -127,6 +116,9 @@
 				  });
 				}
 			  </script>
+			
+			<!-- toast -->
+			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 	</body>
 </html>

@@ -19,15 +19,29 @@
 	function formSubmit(form){
 		$(`${form}`).on('submit', function(e) {
 			e.preventDefault();
+
 			var objectForm = {};
 	
-			$(`${form} input, ${form} textarea`).each(function() {
+			$(`${form} input, ${form} textarea, ${form} select`).each(function() {
 				var fieldName = $(this).attr('name');
 				var fieldValue = $(this).val();
 				if(fieldName === undefined || fieldName === '') return;
 				objectForm[fieldName] = fieldValue;
 			});
 
+			Toastify({
+				text: "Formulário enviado com sucesso!",
+				duration: 3000,
+				destination: "https://github.com/apvarun/toastify-js",
+				newWindow: true,
+				gravity: "top", // `top` or `bottom`
+				position: "right", // `left`, `center` or `right`
+				stopOnFocus: true, // Prevents dismissing of toast on hover
+				style: {
+				  background: "#00b09b",
+				},
+				onClick: function(){} // Callback after click
+			  }).showToast();
 			console.log(objectForm);
 
 		});
