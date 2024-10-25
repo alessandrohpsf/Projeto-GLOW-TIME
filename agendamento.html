@@ -10,6 +10,8 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
 		<link rel="manifest" href="manifest.json">
+		<!-- toast -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 	</head>
 	<body class="is-preload">
 
@@ -45,55 +47,44 @@
 
 								<!-- Form -->
 
-									<form method="post" action="#">
+									<form name="form-schedule" id="form-schedule" method="post" action="#">
 										<div class="row gtr-uniform">
 											<div class="col-6 col-12-xsmall">
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Nome" />
+												<input type="text" name="schedule-name" id="schedule-name" value="" placeholder="Nome" required/>
 											</div>
 											<div class="col-6 col-12-xsmall">
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="E-mail" />
+												<input type="email" name="schedule-email" id="schedule-email" value="" placeholder="E-mail" required/>
 											</div>
 											<!-- Break -->
 											<div class="col-12">
-												<select name="demo-category" id="demo-category">
-													<option value="">- Categoria -</option>
-													<option value="1">estetica</option>
-													<option value="1">estetica</option>
+												<input type="text" name="schedule-phone" id="schedule-phone" value="" placeholder="Telefone" required/>
+											</div>
+											<!-- Break -->
+											<div class="col-6 col-12-xsmall">
+												<input type="date" name="schedule-date" id="schedule-date" value="" title="Selecione uma data de agendamento" required/>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<select name="schedule-time" id="schedule-time" required>
+													<option value="" disabled selected>Selecione uma hora</option>
+													<option value="7:00">7:00</option>
+													<option value="8:00">8:00</option>
+													<option value="9:00">9:00</option>
+													<option value="10:00">10:00</option>
+													<option value="11:00">11:00</option>
+													<option value="12:00">12:00</option>
+													<option value="13:00">13:00</option>
+													<option value="14:00">14:00</option>
+													<option value="15:00">15:00</option>
+													<option value="16:00">16:00</option>
 												</select>
-												<p><h3>Público Alvo</h3></p>
-											</div>
-											
-											<!-- Break -->
-											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Conservador</label>
-											</div>
-											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-normal" name="demo-priority">
-												<label for="demo-priority-normal">Moderado</label>
-											</div>
-											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">Arrojado</label>
-											</div>
-											<!-- Break -->
-											<div class="col-6 col-12-small">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Internacional</label>
-											</div>
-											<div class="col-6 col-12-small">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Nacional</label>
-											</div>
-											<!-- Break -->
-											<div class="col-12">
-												<textarea name="demo-message" id="demo-message" placeholder="Escreva o que pensar" rows="6"></textarea>
 											</div>
 											<!-- Break -->
 											<div class="col-12">
 												<ul class="actions">
-													<li><input type="submit" value="Enviar" class="primary" /></li>
-													<li><input type="reset" value="Limpar" /></li>
+													<!-- Enviar -->
+													<li><input type="submit" class="primary" /></li>
+													<!-- Limpar -->
+													<li><input type="reset"/></li>
 												</ul>
 											</div>
 										</div>
@@ -125,6 +116,9 @@
 				  });
 				}
 			  </script>
+			
+			<!-- toast -->
+			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 	</body>
 </html>

@@ -10,6 +10,8 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
 		<link rel="manifest" href="manifest.json">
+		<!-- toast -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 	</head>
 	<body class="is-preload">
 
@@ -45,20 +47,20 @@
 								</header>
 
 								<section>
-									<form method="post" action="#">
+									<form method="post" name="form-contact" id="form-contact" action="#">
 										<div class="fields">
 											
 											<div class="field">
-												<label for="name">Nome</label>
-												<input type="text" name="name" id="name" />
+												<label for="contact-name">Nome</label>
+												<input type="text" name="contact-name" id="contact-name" required/>
 											</div>
 											<div class="field">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
+												<label for="contact-email">Email</label>
+												<input type="email" name="contact-email" id="contact-email" required/>
 											</div>
 											<div class="field">
-												<label for="message">Mensagem</label>
-												<textarea name="message" id="message" rows="3"></textarea>
+												<label for="contact-message">Mensagem</label>
+												<textarea name="contact-message" id="contact-message" rows="3" required></textarea>
 											</div>
 										</div>
 										<ul class="actions">
@@ -121,6 +123,8 @@
 				  });
 				}
 			  </script>
-
+			
+			<!-- toast -->
+			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 	</body>
 </html>
