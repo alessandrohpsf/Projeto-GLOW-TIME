@@ -303,7 +303,7 @@ input, select, textarea {
 		}
 
 	strong, b {
-		color: #212931;
+		color: #213127;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -3418,7 +3418,8 @@ input, select, textarea {
 				opacity: 0;
 				visibility: hidden;
 			}
-
+        
+			/*
 		#intro.hidden {
 			pointer-events: none;
 			-moz-transform: translateY(2rem);
@@ -3456,7 +3457,7 @@ input, select, textarea {
 				-ms-transform: translateY(4rem);
 				transform: translateY(4rem);
 				opacity: 0;
-			}
+			} */
 
 		@media screen and (max-width: 980px) {
 
@@ -4599,3 +4600,16 @@ input, select, textarea {
 		}
 
 	}
+
+	#intro .image img {
+		width: 100%; /* Faz com que a imagem ocupe 100% da largura do contêiner */
+		max-width: 300px; /* Define um limite máximo para a largura, caso necessário */
+		height: auto; /* Mantém a proporção da imagem */
+	}
+	
+	@media only screen and (max-width: 600px) {
+		#intro .image img {
+			max-width: 90%; /* Ajuste específico para telas menores */
+		}
+	}
+	
