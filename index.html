@@ -10,7 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="css/main.css" />
 		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
-		<link rel="manifest" href="manifest.json">
+
 
 
 	</head>
@@ -104,22 +104,7 @@
 			<script src="js/util.js"></script>
 			<script src="js/main.js"></script>
 
-			<script>
-				let newWorker;
-				if ('serviceWorker' in navigator) {
-				  navigator.serviceWorker.register('/service-worker.js').then(reg => {
-					reg.addEventListener('updatefound', () => {
-					  newWorker = reg.installing;
-					});
-				  });
-				  let refreshing;
-				  navigator.serviceWorker.addEventListener('controllerchange', function () {
-					if (refreshing) return;
-					window.location.reload();
-					refreshing = true;
-				  });
-				}
-			</script>
+			
 
 	</body>
 </html>

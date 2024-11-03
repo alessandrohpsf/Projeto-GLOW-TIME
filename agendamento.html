@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="pt-BR">
 	<head>
 		<title>GrowTime - Agendamento</title>
 		<link rel="icon" 
@@ -9,7 +9,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="css/main.css" />
 		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
-		<link rel="manifest" href="manifest.json">
+
+		<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+
+
 		<!-- toast -->
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 	</head>
@@ -48,30 +52,38 @@
 
 								<!-- Form -->
 
-									<form name="form-schedule" id="form-schedule" method="post" action="#">
-										<div class="row gtr-uniform">
+									<form name="form-schedule" id="form-schedule" method="post" action="#" >
+
+										<div class="row gtr-uniform" >
+											
 											<div class="col-6 col-12-xsmall">
-												<input type="text" name="schedule-name" id="schedule-name" value="" placeholder="Nome" required/>
+												<input type="text" name="schedule-name" id="nome" value="" placeholder="Nome" required/>
 											</div>
+
 											<div class="col-6 col-12-xsmall">
-												<input type="email" name="schedule-email" id="schedule-email" value="" placeholder="E-mail" required/>
+												<input type="text" name="schedule-phone" id="telefone" value="" placeholder="Telefone" required/>
 											</div>
-											<!-- Break -->
+
 											<div class="col-12">
-												<input type="text" name="schedule-phone" id="schedule-phone" value="" placeholder="Telefone" required/>
+												<input type="email" name="schedule-email" id="email" value="" placeholder="E-mail" required/>
 											</div>
+
+											
+
 											<div class="col-12">
-												<select name="demo-category" id="demo-category">
+												<select name="demo-category" id="servico">
 													<option value="">Serviços</option>
-													<option value="1">Aroma Essence</option>
+													<option value="Aroma Essence">Aroma Essence</option>
 												</select>
 											</div>
-											<!-- Break -->
+
+											
 											<div class="col-6 col-12-xsmall">
-												<input type="date" name="schedule-date" id="schedule-date" value="" title="Selecione uma data de agendamento" required/>
+												<input type="date" name="schedule-date" id="data" value="" title="Selecione uma data de agendamento" required/>
 											</div>
+
 											<div class="col-6 col-12-xsmall">
-												<select name="schedule-time" id="schedule-time" required>
+												<select name="schedule-time" id="horario" required>
 													<option value="" disabled selected>Selecione uma hora</option>
 													<option value="7:00">7:00</option>
 													<option value="8:00">8:00</option>
@@ -85,18 +97,52 @@
 													<option value="16:00">16:00</option>
 												</select>
 											</div>
+
 											<!-- Break -->
 											<div class="col-12">
 												<ul class="actions">
 													<!-- Enviar -->
-													<li><input type="submit" class="primary" /></li>
+													<li><input type="submit" class="primary" onclick="agendarServico()"/> </li>
 													<!-- Limpar -->
 													<li><input type="reset"/></li>
 												</ul>
 											</div>
+
 										</div>
 									</form>
 			</div>
+
+
+			<div id="main">
+
+				<!-- Table -->
+					
+					<h3>Fila de Espera</h3>
+					<div class="table-wrapper">
+						<table id="tabelaAgendamentos">
+							<thead>
+								<tr>
+									<th>Nome</th>
+									<th>E-mail</th>
+									<th>Telefone</th>
+									<th>Serviço</th>
+									<th>Data</th>
+									<th>Horário</th>
+									<th>Ações</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+					
+	
+
+</div>
+
+
+
+			
 
 		<!-- Scripts -->
 			<script src="js/jquery.min.js"></script>
@@ -107,23 +153,15 @@
 			<script src="js/util.js"></script>
 			<script src="js/main.js"></script>
 
-			<script>
-				let newWorker;
-				if ('serviceWorker' in navigator) {
-				  navigator.serviceWorker.register('/service-worker.js').then(reg => {
-					reg.addEventListener('updatefound', () => {
-					  newWorker = reg.installing;
-					});
-				  });
-				  let refreshing;
-				  navigator.serviceWorker.addEventListener('controllerchange', function () {
-					if (refreshing) return;
-					window.location.reload();
-					refreshing = true;
-				  });
-				}
-			  </script>
-			
+
+
+			<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+            <script>
+              emailjs.init("YOUR_USER_ID"); // Substitua "YOUR_USER_ID" pelo seu ID da EmailJS
+            </script>
+            <script src="js/agendamento.js"></script>
+
+
 			<!-- toast -->
 			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 

@@ -1,0 +1,15 @@
+{
+  "name": "estetica_check",
+  "version": "1.0.0",
+  "main": "js/agendamento.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "emailjs-com": "^3.2.0"
+  }
+}

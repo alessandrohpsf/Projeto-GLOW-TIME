@@ -112,22 +112,6 @@
 			<script src="js/util.js"></script>
 			<script src="js/main.js"></script>
 
-			<script>
-				let newWorker;
-				if ('serviceWorker' in navigator) {
-				  navigator.serviceWorker.register('/service-worker.js').then(reg => {
-					reg.addEventListener('updatefound', () => {
-					  newWorker = reg.installing;
-					});
-				  });
-				  let refreshing;
-				  navigator.serviceWorker.addEventListener('controllerchange', function () {
-					if (refreshing) return;
-					window.location.reload();
-					refreshing = true;
-				  });
-				}
-			  </script>
 			
 			<!-- toast -->
 			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
