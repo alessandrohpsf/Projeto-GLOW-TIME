@@ -9,7 +9,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="css/main.css" />
 		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+		<script src="js/agendamento.js"></script>
 		<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+		
 
 		
 
@@ -50,68 +52,15 @@
 												</tr>
 											</thead>
 											<tbody>
-
-												<!--
-												<tr>
-													<td>Lucia Balbina</td>
-													<td>lulubalbina@gmail.com</td>
-													<td>(81)9 8568-5857</td>
-													<td>Aroma Essence</td>
-													<td>20/09/24</td>
-													<td>16:00</td>
-												</tr>
-												-->
-											
 											</tbody>
 
-											<!--
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td></td>
-												</tr>
-											</tfoot>
-										    -->
 											
 
 										</table>
 									</div>
                                       
-									<!--
-									<h3>Atendimentos Realizados</h3>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Nome</th>
-													<th>Email</th>
-													<th>Telefone</th>
-													<th>Serviço</th>
-													<th>Data</th>
-													<th>Hora</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Rafaela da Sapucaia</td>
-													<td>rafasapu@gmail.com</td>
-													<td>(81)9 3125-5847</td>
-													<td>Aroma Essence</td>
-													<td>25/09/24</td>
-													<td>16:00</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td></td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									-->
 									
+					</div>				
 					
 
 			</div>
@@ -124,11 +73,16 @@
 			<script src="js/breakpoints.min.js"></script>
 			<script src="js/util.js"></script>
 			<script src="js/main.js"></script>
-			<script src="js/agendamento.js"></script>
+			<script>
+				document.addEventListener("DOMContentLoaded", function() {
+					carregarAgendamentos(); // Chama a função para carregar os agendamentos ao abrir a página
+				});
+			</script>
+			
 
 			<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
             <script>
-               emailjs.init("YOUR_USER_ID"); // Substitua "YOUR_USER_ID" pelo seu ID da EmailJS
+               emailjs.init("YgXGvFXBtAVSsBzZU"); // Substitua "YOUR_USER_ID" pelo seu ID da EmailJS
             </script>
               
 

@@ -16,9 +16,6 @@ function validarTelefone(telefone) {
     return regexTelefone.test(telefone);
 }
 
-// Importa a biblioteca EmailJS
-
-
 // Inicializa o EmailJS com seu ID de usuário
 emailjs.init("YgXGvFXBtAVSsBzZU"); // Substitua "YOUR_USER_ID" pelo seu ID da EmailJS
 
@@ -50,7 +47,7 @@ function carregarAgendamentos() {
     const tabela = document.querySelector('#tabelaAgendamentos tbody');
     tabela.innerHTML = '';
 
-    agendamentos.forEach((agendamento, index) => {
+    agendamentos.forEach((agendamento, index,) => {
         const row = tabela.insertRow();
         row.innerHTML = `
             <td>${agendamento.nome}</td>
@@ -60,7 +57,6 @@ function carregarAgendamentos() {
             <td>${agendamento.data}</td>
             <td>${agendamento.horario}</td>
             <td>
-                <button onclick="editarAgendamento(${index})">Editar</button>
                 <button onclick="deletarAgendamento(${index})">Excluir</button>
             </td>
         `;

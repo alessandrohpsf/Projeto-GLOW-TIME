@@ -11,9 +11,9 @@
 		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
 
 		<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+		<script src="js/agendamento.js"></script>
 
-
-
+		
 		<!-- toast -->
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 	</head>
@@ -68,8 +68,6 @@
 												<input type="email" name="schedule-email" id="email" value="" placeholder="E-mail" required/>
 											</div>
 
-											
-
 											<div class="col-12">
 												<select name="demo-category" id="servico">
 													<option value="">Serviços</option>
@@ -110,39 +108,9 @@
 
 										</div>
 									</form>
-			</div>
-
-
-			<div id="main">
-
-				<!-- Table -->
-					
-					<h3>Fila de Espera</h3>
-					<div class="table-wrapper">
-						<table id="tabelaAgendamentos">
-							<thead>
-								<tr>
-									<th>Nome</th>
-									<th>E-mail</th>
-									<th>Telefone</th>
-									<th>Serviço</th>
-									<th>Data</th>
-									<th>Horário</th>
-									<th>Ações</th>
-								</tr>
-							</thead>
-							<tbody>
-							</tbody>
-						</table>
-					</div>
-					
-	
+			</div>	
 
 </div>
-
-
-
-			
 
 		<!-- Scripts -->
 			<script src="js/jquery.min.js"></script>
@@ -157,11 +125,10 @@
 
 			<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
             <script>
-              emailjs.init("YOUR_USER_ID"); // Substitua "YOUR_USER_ID" pelo seu ID da EmailJS
+               emailjs.init("YgXGvFXBtAVSsBzZU"); // Substitua "YOUR_USER_ID" pelo seu ID da EmailJS
             </script>
-            <script src="js/agendamento.js"></script>
-
-
+              
+            
 			<!-- toast -->
 			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
