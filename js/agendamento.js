@@ -17,20 +17,20 @@ function validarTelefone(telefone) {
 }
 
 // Inicializa o EmailJS com seu ID de usuário
-emailjs.init("YgXGvFXBtAVSsBzZU"); // Substitua "YOUR_USER_ID" pelo seu ID da EmailJS
+emailjs.init("eTjq6oBBXhwTgD7NZ"); // Substitua "YOUR_USER_ID" pelo seu ID da EmailJS
 
 
 
 // Função para enviar e-mail de confirmação do agendamento
 function enviarEmailAgendamento(agendamento) {
-    emailjs.send("service_2i66yu7", "template_kczihfa", {
+    emailjs.send("service_t3rmtts", "template_01eo2m9", {
         nome: agendamento.nome,
         email: agendamento.email,
         telefone: agendamento.telefone,
         servico: agendamento.servico,
         data: agendamento.data,
         horario: agendamento.horario,
-    }, "YgXGvFXBtAVSsBzZU")
+    }, "eTjq6oBBXhwTgD7NZ")
     .then(function(response) {
         console.log("E-mail enviado com sucesso!", response.status, response.text);
         alert("Agendamento realizado e e-mail de confirmação enviado!");
