@@ -109,6 +109,13 @@ function agendarServico() {
     agendamentos.push(agendamento);
     localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
 
+    // Salvar data e horário no LocalStorage para tornar o horário indisponível
+    const horariosIndisponiveis = JSON.parse(localStorage.getItem('horariosIndisponiveis')) || {};
+    if (!horariosIndisponiveis[data]) {
+        horariosIndisponiveis[data] = [];
+    }
+    horariosIndisponiveis[data].push(horario);
+    localStorage.setItem('horariosIndisponiveis', JSON.stringify(horariosIndisponiveis));
 
 
    // Chama a função para enviar o e-mail de confirmação
