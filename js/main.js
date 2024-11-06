@@ -48,6 +48,7 @@
 
 		});
 	}
+
 	formSubmit('#form-contact');
 	formSubmit('#form-schedule');
     

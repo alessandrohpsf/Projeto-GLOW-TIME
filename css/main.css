@@ -145,7 +145,7 @@ input, select, textarea {
 		}
 
 	body {
-		color: #3E2B32;
+		color: #212931;
 	}
 
 	body, input, select, textarea {
@@ -289,11 +289,11 @@ input, select, textarea {
 	}
 
 	input, select, textarea {
-		color: #3E2B32;
+		color: #212931;
 	}
 
 	a {
-		color: #3E2B32;
+		color: #212931;
 		border-bottom-color: rgba(33, 41, 49, 0.5);
 	}
 
@@ -307,7 +307,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #3E2B32;
+		color: #212931;
 	}
 
 	blockquote {
@@ -2208,7 +2208,7 @@ input, select, textarea {
 	.button {
 		background-color: transparent;
 		box-shadow: inset 0 0 0 2px #213124;
-		color: #3E2B32 !important;
+		color: #212931 !important;
 	}
 
 		input[type="submit"]:hover,
@@ -2225,7 +2225,7 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #3E2B32;
+			background-color: #212931;
 			box-shadow: none;
 			color: #ffffff !important;
 		}
@@ -2480,7 +2480,7 @@ input, select, textarea {
 	}
 
 	label {
-		color: #3E2B32;
+		color: #212931;
 	}
 
 	input[type="text"],
@@ -2489,7 +2489,7 @@ input, select, textarea {
 	input[type="date"],
 	select,
 	textarea {
-		border-color: #3E2B32;
+		border-color: #eeeeee;
 	}
 
 		input[type="text"]:focus,
@@ -2503,13 +2503,11 @@ input, select, textarea {
 
 	select {
 		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%23eeeeee' /%3E%3C/svg%3E");
-		
 	}
 
 		select option {
 			background-color: #ffffff;
-            color: #3E2B32;
-            
+			color: #212931;
 		}
 
 	.select-wrapper:before {
@@ -2518,7 +2516,7 @@ input, select, textarea {
 
 	input[type="checkbox"] + label,
 	input[type="radio"] + label {
-		color: #3E2B32;
+		color: #212931;
 	}
 
 		input[type="checkbox"] + label:before,
@@ -2528,8 +2526,8 @@ input, select, textarea {
 
 	input[type="checkbox"]:checked + label:before,
 	input[type="radio"]:checked + label:before {
-		background-color: #3E2B32;
-		border-color: #3E2B32;
+		background-color: #212931;
+		border-color: #212931;
 		color: #ffffff;
 	}
 
@@ -3095,7 +3093,7 @@ input, select, textarea {
 		}
 
 	table th {
-		color: #3E2B32;
+		color: #212931;
 	}
 
 	table thead {
@@ -3204,7 +3202,7 @@ input, select, textarea {
 	}
 
 	.pagination a {
-		color: #3E2B32 !important;
+		color: #212931 !important;
 	}
 
 		.pagination a:hover {
@@ -3768,7 +3766,7 @@ input, select, textarea {
 /* Main */
 
 	#main {
-		background-color: #F8EDF0;
+		background-color: #FEF8F9;
 		position: relative;
 		margin: 0 auto;
 		width: calc(100% - 4rem);
@@ -4442,7 +4440,7 @@ input, select, textarea {
 		#navPanelToggle.alt {
 			background-color: rgba(255, 255, 255, 0.875);
 			box-shadow: 0 0.125rem 0.75rem 0 rgba(30, 37, 45, 0.25);
-			color: #3E2B32;
+			color: #212931;
 		}
 
 			#navPanelToggle.alt:hover {
@@ -4479,7 +4477,7 @@ input, select, textarea {
 		-webkit-overflow-scrolling: touch;
 		background: #ffffff;
 		box-shadow: none;
-		color: #3E2B32;
+		color: #212931;
 		height: 100%;
 		max-width: 80%;
 		overflow-y: auto;
@@ -4558,7 +4556,7 @@ input, select, textarea {
 			}
 
 			#navPanel .close:hover {
-				color: #3E2B32;
+				color: #212931;
 			}
 
 			@media screen and (max-width: 736px) {
@@ -4614,39 +4612,4 @@ input, select, textarea {
 			max-width: 90%; /* Ajuste específico para telas menores */
 		}
 	}
-	
-
-
-
-
-	#footer {
-		text-align: center;
-		padding: 20px;
-		background: #F8EDF0;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-	
-	#footer .icons {
-		display: flex;
-		align-items: center;
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-	
-	#footer .icons li {
-		display: flex;
-		align-items: center;
-	}
-	
-	#footer .icons li a {
-		margin-right: 5px;
-		font-size: 12pt; /* Ajuste o tamanho do ícone se necessário */
-	}
-	
-
-
 	

@@ -10,22 +10,27 @@ function validarEmail(email) {
     return regexEmail.test(email);
 }
 
+// Função para verificar se o telefone contém apenas números
+function validarTelefone(telefone) {
+    const regexTelefone = /^(?:\(\d{2}\)\d{9}|\d{11}|\(\d{2}\)\d{5}-\d{4})$/;
+    return regexTelefone.test(telefone);
+}
 
 // Inicializa o EmailJS com seu ID de usuário
-emailjs.init("eTjq6oBBXhwTgD7NZ"); // Substitua "YOUR_USER_ID" pelo seu ID da EmailJS
+emailjs.init("YgXGvFXBtAVSsBzZU"); // Substitua "YOUR_USER_ID" pelo seu ID da EmailJS
 
 
 
 // Função para enviar e-mail de confirmação do agendamento
 function enviarEmailAgendamento(agendamento) {
-    emailjs.send("service_t3rmtts", "template_01eo2m9", {
+    emailjs.send("service_2i66yu7", "template_kczihfa", {
         nome: agendamento.nome,
         email: agendamento.email,
         telefone: agendamento.telefone,
         servico: agendamento.servico,
         data: agendamento.data,
         horario: agendamento.horario,
-    }, "eTjq6oBBXhwTgD7NZ")
+    }, "YgXGvFXBtAVSsBzZU")
     .then(function(response) {
         console.log("E-mail enviado com sucesso!", response.status, response.text);
         alert("Agendamento realizado e e-mail de confirmação enviado!");
@@ -56,60 +61,6 @@ function carregarAgendamentos() {
             </td>
         `;
     });
-}
-
-// Função para agendar um serviço (Create)
-function agendarServico() {
-    const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    const telefone = document.getElementById('telefone').value;
-    const servico = document.getElementById('servico').value;
-    const data = document.getElementById('data').value;
-    const horario = document.getElementById('horario').value;
-
-    // Verificar se todos os campos obrigatórios estão preenchidos
-    if (!nome || !email || !telefone || !data || !horario) {
-        alert('Por favor, preencha todos os campos.');
-        return;
-    }
-
-    // Verificar se o nome contém apenas letras
-    if (!validarNome(nome)) {
-        alert('O nome deve conter apenas letras.');
-        return;
-    }
-
-    // Verificar se o e-mail é válido
-    if (!validarEmail(email)) {
-        alert('Por favor, insira um e-mail válido.');
-        return;
-    }
-
-
-    const agendamento = {
-        nome,
-        email,
-        telefone,
-        servico,
-        data,
-        horario
-    };
-
-    const agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
-    agendamentos.push(agendamento);
-    localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
-
-    // Salvar data e horário no LocalStorage para tornar o horário indisponível
-    const horariosIndisponiveis = JSON.parse(localStorage.getItem('horariosIndisponiveis')) || {};
-    if (!horariosIndisponiveis[data]) {
-        horariosIndisponiveis[data] = [];
-    }
-    horariosIndisponiveis[data].push(horario);
-    localStorage.setItem('horariosIndisponiveis', JSON.stringify(horariosIndisponiveis));
-
-
-   // Chama a função para enviar o e-mail de confirmação
-    enviarEmailAgendamento(agendamento);
 }
 
 // Função para limpar o formulário após o agendamento
@@ -182,5 +133,3 @@ document.getElementById('data').addEventListener('change', function() {
     desabilitarHorarios(dataSelecionada);
 });
 
-// Carrega os agendamentos ao abrir a página  
-carregarAgendamentos();
