@@ -43,7 +43,7 @@ function enviarEmailAgendamento(agendamento) {
 // Função para carregar os agendamentos do LocalStorage
 
 function carregarAgendamentos() {
-    fetch('https://senacglowtime.netlify.app/gerenciamento')
+    fetch('https://grow-back.onrender.com/api/gerenciamento')
         .then(response => response.json())
         .then(agendamentos => {
             const tabela = document.querySelector('#tabelaAgendamentos tbody');
@@ -58,13 +58,12 @@ function carregarAgendamentos() {
                     <td>${agendamento.servico}</td>
                     <td>${agendamento.data_agenda}</td>
                     <td>${agendamento.horario}</td>
-                    <td>
-                        <button onclick="deletarAgendamento(${index})">Excluir</button>
-                    </td>
                 `;
             });
         })
-        .catch(error => console.error('Erro ao carregar agendamentos:', error));
+        .catch(error => {
+            console.error('Erro ao carregar agendamentos:', error);
+        });
 }
 
 document.addEventListener("DOMContentLoaded", function() {
