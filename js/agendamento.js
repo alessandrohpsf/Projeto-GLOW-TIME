@@ -43,7 +43,7 @@ function enviarEmailAgendamento(agendamento) {
 // Função para carregar os agendamentos do LocalStorage
 
 function carregarAgendamentos() {
-    fetch('https://seu-servidor/api/gerenciamento')
+    fetch('https://senacglowtime.netlify.app/gerenciamento')
         .then(response => response.json())
         .then(agendamentos => {
             const tabela = document.querySelector('#tabelaAgendamentos tbody');
