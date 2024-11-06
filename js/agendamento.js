@@ -58,15 +58,11 @@ function carregarAgendamentos() {
                     <td>${agendamento.servico}</td>
                     <td>${agendamento.data_agenda}</td>
                     <td>${agendamento.horario}</td>
-                    <td>
-                        <button onclick="deletarAgendamento(${index})">Excluir</button>
-                    </td>
                 `;
             });
         })
         .catch(error => {
             console.error('Erro ao carregar agendamentos:', error);
-            alert('Erro ao carregar agendamentos: ' + error.message);
         });
 }
 
