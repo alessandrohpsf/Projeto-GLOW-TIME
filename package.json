@@ -1,5 +1,5 @@
 {
-  "name": "Projeto-GROW-TIME",
+  "name": "Projeto-GLOW-TIME",
   "version": "1.0.0",
   "main": "js/agendamento.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "axios": "^1.7.7",
     "emailjs-com": "^3.2.0"
   }
 }

@@ -207,6 +207,49 @@
 
 </div>
 
+<script>
+
+	function agendarServico(event) {
+	
+		// Coleta os valores dos campos do formulário
+		const nome = document.getElementById("nome").value;
+		const telefone = document.getElementById("telefone").value;
+		const email = document.getElementById("email").value;
+		const servico = document.getElementById("servico").value;
+		const data_agenda = document.getElementById("data_agenda").value;
+		const horario = document.getElementById("horario").value;
+	
+		// Cria o objeto de dados para enviar
+		const agendamentoData = { nome, telefone, email, servico, data_agenda, horario };
+	
+		// Faz o POST para a URL /api/form usando fetch
+		fetch('https://grow-back.onrender.com/api/agendar', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(agendamentoData)
+		})
+		.then(response => {
+			if (!response.ok) {
+				throw new Error('Erro ao enviar o formulário');
+			}
+			return response.json();
+		})
+		.then(data => {
+			console.log("Formulário enviado com sucesso:", data);
+			limparFormulario(); // Limpa o formulário
+			carregarAgendamentos(); // Atualiza a lista de agendamentos
+		})
+	  
+	}
+	
+	function limparFormulario() {
+		document.getElementById("form-schedule").reset();
+	}
+		
+</script>
+
 		<!-- Scripts -->
 			<script src="js/jquery.min.js"></script>
 			<script src="js/jquery.scrollex.min.js"></script>
