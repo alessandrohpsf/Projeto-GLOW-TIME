@@ -43,25 +43,34 @@ function enviarEmailAgendamento(agendamento) {
 // Função para carregar os agendamentos do LocalStorage
 
 function carregarAgendamentos() {
-    const agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
-    const tabela = document.querySelector('#tabelaAgendamentos tbody');
-    tabela.innerHTML = '';
+    fetch('https://senacglowtime.netlify.app/gerenciamento')
+        .then(response => response.json())
+        .then(agendamentos => {
+            const tabela = document.querySelector('#tabelaAgendamentos tbody');
+            tabela.innerHTML = '';
 
-    agendamentos.forEach((agendamento, index,) => {
-        const row = tabela.insertRow();
-        row.innerHTML = `
-            <td>${agendamento.nome}</td>
-            <td>${agendamento.email}</td>
-            <td>${agendamento.telefone}</td>
-            <td>${agendamento.servico}</td>
-            <td>${agendamento.data}</td>
-            <td>${agendamento.horario}</td>
-            <td>
-                <button onclick="deletarAgendamento(${index})">Excluir</button>
-            </td>
-        `;
-    });
+            agendamentos.forEach((agendamento, index) => {
+                const row = tabela.insertRow();
+                row.innerHTML = `
+                    <td>${agendamento.nome}</td>
+                    <td>${agendamento.email}</td>
+                    <td>${agendamento.telefone}</td>
+                    <td>${agendamento.servico}</td>
+                    <td>${agendamento.data_agenda}</td>
+                    <td>${agendamento.horario}</td>
+                    <td>
+                        <button onclick="deletarAgendamento(${index})">Excluir</button>
+                    </td>
+                `;
+            });
+        })
+        .catch(error => console.error('Erro ao carregar agendamentos:', error));
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    carregarAgendamentos(); // Chama a função para carregar os agendamentos ao abrir a página
+});
+
 
 // Função para limpar o formulário após o agendamento
 function limparFormulario() {
