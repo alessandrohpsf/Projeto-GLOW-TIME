@@ -77,23 +77,118 @@
 
 											
 											<div class="col-6 col-12-xsmall">
-												<input type="date" name="schedule-date" id="data" value="" title="Selecione uma data de agendamento" required/>
+												<select name="schedule-date" id="date-selector" required>
+													<option value="" disabled selected>Selecione uma data</option>
+													<option value="2024-11-06">06/11/2024</option>
+													<option value="2024-11-07">07/11/2024</option>
+													<option value="2024-11-08">08/11/2024</option>
+												</select>
+												
+												<script>
+													function removePastDates() {
+														const select = document.getElementById('date-selector');
+														const now = new Date();
+														now.setHours(0, 0, 0, 0); // Zera a hora para comparar apenas a data
+												
+														for (let i = select.options.length - 1; i >= 1; i--) {
+															const option = select.options[i];
+															const optionDate = new Date(option.value);
+												
+															if (optionDate < now) {
+																select.remove(i); // Remove a opção de data passada
+															}
+														}
+													}
+												
+													// Chama a função ao carregar a página
+													window.onload = removePastDates;
+												
+													// Atualiza a cada dia para remover datas passadas em tempo real (ajuste de 24h)
+													setInterval(removePastDates, 86400000);
+												</script>
+												
 											</div>
 
 											<div class="col-6 col-12-xsmall">
 												<select name="schedule-time" id="horario" required>
 													<option value="" disabled selected>Selecione uma hora</option>
-													<option value="7:00">7:00</option>
-													<option value="8:00">8:00</option>
 													<option value="9:00">9:00</option>
-													<option value="10:00">10:00</option>
-													<option value="11:00">11:00</option>
-													<option value="12:00">12:00</option>
-													<option value="13:00">13:00</option>
-													<option value="14:00">14:00</option>
+                                                    <option value="9:05">9:05</option>
+                                                    <option value="9:10">9:10</option>
+                                                    <option value="9:15">9:15</option>
+                                                    <option value="9:20">9:20</option>
+                                                    <option value="9:25">9:25</option>
+                                                    <option value="9:30">9:30</option>
+                                                    <option value="9:35">9:35</option>
+                                                    <option value="9:40">9:40</option>
+                                                    <option value="9:45">9:45</option>
+                                                    <option value="9:50">9:50</option>
+                                                    <option value="9:55">9:55</option>
+                                                    <option value="10:00">10:00</option>
+                                                    <option value="10:05">10:05</option>
+                                                    <option value="10:10">10:10</option>
+                                                    <option value="10:15">10:15</option>
+                                                    <option value="10:20">10:20</option>
+                                                    <option value="10:25">10:25</option>
+                                                    <option value="10:30">10:30</option>
+                                                    <option value="10:35">10:35</option>
+                                                    <option value="10:40">10:40</option>
+                                                    <option value="10:45">10:45</option>
+                                                    <option value="10:50">10:50</option>
+                                                    <option value="10:55">10:55</option>
 													<option value="15:00">15:00</option>
+													<option value="15:05">15:05</option>
+													<option value="15:10">15:10</option>
+													<option value="15:15">15:15</option>
+													<option value="15:20">15:20</option>
+													<option value="15:25">15:25</option>
+													<option value="15:30">15:30</option>
+													<option value="15:35">15:35</option>
+													<option value="15:40">15:40</option>
+													<option value="15:45">15:45</option>
+													<option value="15:50">15:50</option>
+													<option value="15:55">15:55</option>
 													<option value="16:00">16:00</option>
+													<option value="16:05">16:05</option>
+													<option value="16:10">16:10</option>
+													<option value="16:15">16:15</option>
+													<option value="16:20">16:20</option>
+													<option value="16:25">16:25</option>
+													<option value="16:30">16:30</option>
+													<option value="16:35">16:35</option>
+													<option value="16:40">16:40</option>
+													<option value="16:45">16:45</option>
+													<option value="16:50">16:50</option>
+													<option value="16:55">16:55</option>
+													<option value="23:55">23:55</option>
+
 												</select>
+												
+												<script>
+													function removePastTimes() {
+														const select = document.getElementById('horario');
+														const now = new Date();
+														const currentTime = now.getHours() * 60 + now.getMinutes(); // Hora atual em minutos desde o início do dia
+												
+														for (let i = select.options.length - 1; i >= 1; i--) {
+															const option = select.options[i];
+															const [hour, minute] = option.value.split(':').map(Number);
+															const optionTime = hour * 60 + minute; // Hora da opção em minutos desde o início do dia
+												
+															if (optionTime <= currentTime) {
+																select.remove(i); // Remove a opção passada
+															}
+														}
+													}
+												
+													// Chama a função ao carregar a página
+													window.onload = removePastTimes;
+												
+													// Atualiza a cada minuto para remover horários passados em tempo real
+													setInterval(removePastTimes, 60000);
+												</script>
+												
+												
 											</div>
 
 											<!-- Break -->
