@@ -4612,4 +4612,36 @@ input, select, textarea {
 			max-width: 90%; /* Ajuste específico para telas menores */
 		}
 	}
+
+
+	
+	#footer {
+		text-align: center;
+		padding: 20px;
+		background: #F8EDF0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	#footer .icons {
+		display: flex;
+		align-items: center;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	
+	#footer .icons li {
+		display: flex;
+		align-items: center;
+	}
+	
+	#footer .icons li a {
+		margin-right: 5px;
+		font-size: 12pt; /* Ajuste o tamanho do ícone se necessário */
+	}
+	
+
 	
