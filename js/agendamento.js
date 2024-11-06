@@ -10,11 +10,6 @@ function validarEmail(email) {
     return regexEmail.test(email);
 }
 
-// Função para verificar se o telefone contém apenas números
-function validarTelefone(telefone) {
-    const regexTelefone = /^(?:\(\d{2}\)\d{9}|\d{11}|\(\d{2}\)\d{5}-\d{4})$/;
-    return regexTelefone.test(telefone);
-}
 
 // Inicializa o EmailJS com seu ID de usuário
 emailjs.init("eTjq6oBBXhwTgD7NZ"); // Substitua "YOUR_USER_ID" pelo seu ID da EmailJS
@@ -90,11 +85,6 @@ function agendarServico() {
         return;
     }
 
-    // Verificar se o telefone contém apenas números
-    if (!validarTelefone(telefone)) {
-        alert('O telefone deve conter apenas números.');
-        return;
-    }
 
     const agendamento = {
         nome,
