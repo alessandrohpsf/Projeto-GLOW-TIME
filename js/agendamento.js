@@ -28,7 +28,7 @@ function enviarEmailAgendamento(agendamento) {
         email: agendamento.email,
         telefone: agendamento.telefone,
         servico: agendamento.servico,
-        data: agendamento.data,
+        data: agendamento.data_agenda,
         horario: agendamento.horario,
     }, "eTjq6oBBXhwTgD7NZ")
     .then(function(response) {
